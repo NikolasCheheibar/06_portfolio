@@ -1,0 +1,19 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "../mobilesite/Cormorant_Infant,Roboto/Cormorant_Infant"
+	},
+	{
+		"path": "../mobilesite/Cormorant_Infant,Roboto/Roboto"
+	},
+	{
+		"path": "../mobilesite/webfontkit-20250206-102306"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "indhold"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "../Kea/02_web/20_bokse-opgave-stud/Krona_One"
+	},
+	{
+		"path": "../../Downloads/resote-rose-font"
+	}
+],
+  "settings": {
+    "liveServer.settings.port": 5508,
+    "liveServer.settings.multiRootWorkspaceName": "Kea 18 MARTS "
+  }
+}

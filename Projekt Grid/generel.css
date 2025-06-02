@@ -1,0 +1,67 @@
+body {
+    background-color: aquamarine;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+.krona-one-regular {
+    font-family: "Krona One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+.order {
+    order: -1;
+}
+
+@font-face {
+    src: url('russiano-webfont.woff');
+    font-family: 'headingsFont';
+}
+
+p {
+    font-family: "Krona One";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'headingsFont';
+    color: rgb(5, 52, 221);
+}
+
+h6 {
+    font-family: 'headingsFont';
+    color: rgb(5, 52, 221);
+}
+
+.h2a {
+    src: url('Krona_One');
+    font-family: 'KronaOne';
+}
