@@ -1,33 +1,34 @@
-header {
-    font-family: 'Rosarivo', serif;
-}
-
+/* Root variables and base styles */
 :root {
-    background-color: rgb(81, 255, 147);
     --primary-color: #c0dfff;
     --accent-color: #3498db;
     --bg-color: #a8e8ff;
     --text-color: #333;
+    background-color: rgb(81, 255, 147);
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
 body {
+    font-family: Georgia, serif;
+    background-color: #2F4541;
+    color: #cefff8;
     margin: 0;
-    font-family: 'Italiana', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-header {
-    font-family: 'Rosarivo', serif;
-}
-
-
+/* Header */
 header {
     background-color: rgb(81, 255, 147);
     color: #080808;
     text-align: center;
     padding: 50px 20px 30px;
+    font-family: 'Rosarivo', serif;
 }
 
 header h1 {
@@ -40,6 +41,86 @@ header p {
     margin-top: 12px;
 }
 
+/* Navigation */
+.header {
+    background-color: #40ffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 2rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: "Open_Sans", sans-serif;
+    font-weight: bold;
+}
+
+.menu img {
+    max-width: 60px;
+    height: auto;
+    display: block;
+}
+
+/* Burger Menu (mobile) */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    margin: 10px;
+}
+
+.burger .line {
+    height: 2px;
+    background-color: #333333;
+    margin-bottom: 5px;
+    transition: 0.2s linear;
+}
+
+.burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+nav.active .menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    position: absolute;
+    top: 94px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav.active .menu a {
+    color: #333;
+}
+
+/* Section Layout */
 section {
     max-width: 1000px;
     margin: 50px auto;
@@ -64,8 +145,9 @@ section {
 
 .project {
     background-color: rgba(96, 221, 255, 0.958);
+    align-content: center;
     border-radius: 10px;
-    padding: 20px;
+    padding: -20px;
     box-shadow: 0 4px 12px rgba(214, 6, 6, 0.05);
     transition: transform 0.2s ease;
 }
@@ -98,123 +180,26 @@ section {
     background-color: #2d85c2;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #aaa;
-    font-size: 0.9em;
-}
-
-/* Header */
-
-.header {
-    background-color: #01e4f4;
-    display: flex;
-    justify-content: center;
-}
-
-.menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    flex-wrap: nowrap;
-    gap: 2rem;
-    padding: 1rem;
-}
-
-.menu a {
-    color: #31f5f2;
-    padding: 40px;
-    text-decoration: none;
-    font-family: "Open_Sans", sans-serif;
-    font-weight: bold;
-}
-
-.menu img {
-    max-width: 60px;
-    height: auto;
-    display: block;
-}
-
-/* General styles */
-body {
-
-    font-family: Georgia, serif;
-    background-color: #2F4541;
-    color: #cefff8;
-
-
-
-    margin: 0;
-
-}
-
-/* Header */
-.header {
-    background-color: #40ffff;
-    display: flex;
-    justify-content: center;
-
-}
-
-.menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    gap: 2rem;
-    padding: 1rem;
-}
-
-.menu a {
-    color: #ffffff;
-    padding: 40px;
-    text-decoration: none;
-    font-family: "Open_Sans", sans-serif;
-    font-weight: bold;
-}
-
-.menu img {
-    max-width: 60px;
-    height: auto;
-    display: block;
-}
-
-/* Layout */
-
-
-.section-title {
-    text-align: center;
-    font-size: 1.8rem;
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.social-icons img {
-    width: 100px;
-    height: 100px;
+/* Image styles */
+img {
+    width: 100%;
 }
 
 .image-block {
-    width: 100%;
-    border-radius: 12px;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 12px;
 }
 
 .image-block img {
-    width: 650px;
-    height: 355px;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
     padding: 30px;
 }
 
+/* Contact & Info */
 .address-block,
 .email-block {
     display: flex;
@@ -233,7 +218,6 @@ body {
     aspect-ratio: 1/1;
 }
 
-
 .hours div {
     white-space: nowrap;
 }
@@ -246,7 +230,7 @@ body {
     padding: 30px;
 }
 
-/* Responsive grid (example class for future use) */
+/* Grid Utilities */
 .grid {
     --cols: 3;
     display: grid;
@@ -259,59 +243,15 @@ body {
     }
 }
 
-img {
-    width: 100%;
-}
-
-/* Form placeholder example */
-label,
-input,
-button {
-    font-family: inherit;
-}
-
-/* Optional form class if needed later */
-.form-felt {
-    display: grid;
-    gap: 3px;
-}
-
-/* Headings */
-h1,
-h2 {
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-h1 {
-    font-size: 40px;
-    margin-bottom: 5%;
-
-}
-
-.tider-grid {
-    flex-direction: column;
-    align-items: center;
-}
-
-/**** foooter ting!***/
-.element {
-    height: 100%;
-}
-
+/* Footer */
 .footer_site {
     background-color: #0cf4a3;
     color: white;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
     flex-wrap: wrap;
-
 }
 
 .footer_logo img {
@@ -321,7 +261,6 @@ h1 {
 
 .footer_nav {
     display: flex;
-    flex-direction: row;
     gap: 2rem;
     font-weight: bold;
     font-family: "Open Sans", sans-serif;
@@ -332,89 +271,124 @@ h1 {
     color: white;
 }
 
+.footer_badges {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
 .footer_badges img {
     max-height: 120px;
-    margin-left: 1rem;
 }
 
-.footer_badges {
+/* Section Title */
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+/* Form styling */
+label,
+input,
+button {
+    font-family: inherit;
+}
+
+.form-felt {
+    display: grid;
+    gap: 3px;
+}
+
+/* Headings */
+h1,
+h2 {
+    color: #ffffff;
+    text-align: center;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 5%;
+}
+
+/* Mobile Responsive Tweaks */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    .menu a {
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
+/* Interessekort-sektion */
+.interesser {
+    background-color: #a6e7e1;
+    /* Baggrund som på screenshot */
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.interesser h2 {
+    font-size: 2em;
+    margin-bottom: 2rem;
+    color: #080808;
+    font-family: 'Krona One', sans-serif;
+}
+
+.kort-container {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    display: flex;
-    flex-direction: row;
+    gap: 2rem;
 }
 
-.byen {
-    width: 120px;
+.kort {
+    width: 280px;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Krona One', sans-serif;
+    color: #000;
+    text-align: left;
+    transition: transform 0.2s ease;
 }
 
-.burger {
-    width: 30px;
-    height: 20px;
-    cursor: pointer;
+.kort:hover {
+    transform: translateY(-5px);
 }
 
-/**** Burger menu HTML KODE ting!***/
-.burger .line {
-    width: 100%;
-    height: 2px;
-    background-color: #333333;
-    margin-bottom: 5px;
-    transition: 0.2s linear;
+/* Specifikke baggrunde */
+.kort.musik {
+    background-color: #d9ccf5;
 }
 
-.burger {
-    display: yes;
+.kort.dyr {
+    background-color: #3ff814;
 }
 
-
-.menu {
-    display: yes;
+.kort.friluftsliv {
+    background-color: #e2f0f1;
 }
 
-.burger {
-    display: block;
-}
-
-.burger.active .line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-    transition: 0.2s linear;
-}
-
-.burger.active .line:nth-child(2) {
-    opacity: 0;
-    transition: 0.15s linear;
-}
-
-.burger.active .line:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-    transition: 0.2s linear;
-}
-
-nav.active .menu {
-    display: block;
-    background-color: #ffffff;
-    position: absolute;
-    top: 94px;
-    left: 0;
-    width: 100%;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-}
-
-nav.active .menu li {
-    margin: 10px 20px;
-}
-
-nav.active .menu a {
-    font-size: 100px;
-}
-
-.index-section {
-    max-width: 1200px;
-    margin: auto;
-}
-
-.menu.active {
-    display: flex;
-    /* eller block – afhænger af dit layout */
+/* Responsiv justering */
+@media (max-width: 768px) {
+    .kort {
+        width: 100%;
+        max-width: 320px;
+    }
 }
